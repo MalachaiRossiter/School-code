@@ -1,0 +1,49 @@
+*{
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+body {
+    position: absolute;
+    width: 95%;
+}
+
+.section1 {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.section1 h1 {
+    color: #fff;
+}
+
+.section1 span {
+    color: cyan;
+}
+
+.section2 {
+    background-color: purple;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.section2 {
+    color: #fff;
+}
+
+.section3 {
+    background-color: lightblue;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 30px;
+}

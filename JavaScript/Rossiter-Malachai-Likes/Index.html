@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="navbarContainer">
+            <h1>Network</h1>
+        </div>
+    </div>
+    
+    <h1 class="Heading">Your Feed</h1>
+    <!-- creating columns -->
+    <div class="row">
+
+        <!-- Profile Card -->
+        <div class="col1">
+            <div class="container">
+                <div class="content">
+                    <img src="Cat_image.jpg" alt="Adorable Cat Picture" class="profilePic">
+                    <p><a href="#">Add an avatar</a></p>
+                    <h3>James Doe</h3>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Posts Section -->
+        <div class="col2">
+            <div class="container">
+                <div class="topRow">
+                    <h1>Neil M</h1>
+                    <p id="likes1">Like(s)</p>
+                    <button type="button" class="btnLike" onclick="button1()">Like</button>
+                </div>
+                <div class="bottomRow">
+                    <p>I just set up this new discord bot, let me know what you all think. <a href="#">link</a></p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="topRow">
+                    <h1>Nichole K</h1>
+                    <p id="likes2">Like(s)</p>
+                    <button type="button" class="btnLike" onclick="button2()">Like</button>
+                </div>
+                <div class="bottomRow">
+                    <p>Just finished my <a href="#">next comic</a>, check it out.</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="topRow">
+                    <h1>Jim R</h1>
+                    <p id="likes3">Like(s)</p>
+                    <button type="button" class="btnLike" onclick="button3()">Like</button>
+                </div>
+                <div class="bottomRow">
+                    <p>I can't stop listening to the <a href="#">new album</a>. Who else is liking it?</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

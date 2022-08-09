@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shelter</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="upper-row">
+            <img src="assets/heart-light.png" alt="heart image">
+            <h1>Pet Shelter</h1>
+            <h3><a href="#">Find a Pet</a></h3>
+            <h3><a href="#">About</a></h3>
+            <button id="donate" onclick="donate(this)">DONATE</button>
+        </div>
+
+        <!-- form creation -->
+        <form action="/process" method="post" class="search-form">
+        <div class="form-container">
+            <div class="container">
+                <p>I'm looking for a...</p>
+                <img src="assets/paw-light.png" alt="cute paw">
+                <select id="animal" onchange="message()">
+                    <option value="Any">Any Animal</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                </select>
+            </div>
+            
+            <div class="container">
+                <p>in or near...</p>
+                <img src="assets/pin-light.png" alt="pin">
+                <input type="text" name="location" placeholder="City or Zip Code">
+            </div>
+            <input type="submit" value="Find my new best friend" id="submit-button">
+        </div>
+        </form>
+    </div>
+
+    <!-- Hero Section -->
+
+    <div class="animalposts">
+        <img src="/assets/pepper.jpg" alt="cat">
+            <div class="column1">
+                <h2>Pepper</h2>
+                <p>Pepper is a slightly shy grey tabby, but she really loves showing her human affection.</p>
+            </div>
+            <div class="column2">
+                <p id="post-1">0 petting(s)</p>
+                <button class="btnpet" onclick="like(0)">Pet Pepper</button>
+            </div>
+    </div>
+
+    <div class="animalposts">
+        <img src="/assets/bruce.jpg" alt="puppy">
+            <div class="column1">
+                <h2>Bruce</h2>
+                <p>Bruce is a loyal companion. He loves long walks and cold weather.</p>
+            </div>
+            <div class="column2">
+                <p id="post-2">0 petting(s)</p>
+                <button class="btnpet" onclick="like(1)">Pet Bruce</button>
+            </div>
+    </div>
+
+    <div class="animalposts">
+        <img src="/assets/oscar.jpg" alt="cat">
+            <div class="column1">
+                <h2>Oscar</h2>
+                <p>Oscar is bright, energetic, and friendly. He is looking for a good home.</p>
+            </div>
+            <div class="column2">
+                <p id="post-3">0 petting(s)</p>
+                <button class="btnpet" onclick="like(2)">Pet Oscar</button>
+            </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

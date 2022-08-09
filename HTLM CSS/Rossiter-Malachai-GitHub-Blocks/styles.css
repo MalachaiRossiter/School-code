@@ -1,0 +1,55 @@
+h1 {
+    font-family: Tahoma, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+p {
+    font-family: Tahoma, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.body {
+    height: 1100px;
+    width: 1000px;
+    background-color: grey;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.blueCard {
+    height: 250px;
+    background-color: cyan;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.pinkCard {
+    height: 250px;
+    background-color: pink;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.whiteCard {
+    height: 250px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}

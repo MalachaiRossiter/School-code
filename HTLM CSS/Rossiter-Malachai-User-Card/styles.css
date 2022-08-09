@@ -1,0 +1,76 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.heroContainer{
+    width: 60%;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+}
+
+.col1, .col2{
+    margin-top: 30px;
+    padding: 10px;
+    background-color: grey;
+    flex: 1;
+}
+
+.col1{
+    flex: 2;
+    margin-right:20px;
+}
+
+.profileCard, .card {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #999;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+
+.profileHeader {
+    background-color: cyan;
+    height: 100px;
+    margin-bottom: 70px;
+}
+
+.cardBody {
+    padding: 10px;
+}
+
+.cardBody a{
+    color: blue;
+}
+.profilePics {
+    border-radius: 50%;
+    background-color: #fff;
+    height: 150px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.icon{
+    height: 15px;
+}
+
+/* education */
+
+.cardHeader{
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.dates {
+    font-size: 20px;
+    color: #777;
+}

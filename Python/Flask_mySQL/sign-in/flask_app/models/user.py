@@ -14,7 +14,7 @@ class User:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-
+    #if Im being honest with myself, Im way in over my head
     @classmethod
     def save(cls,data):
         query = "INSERT INTO users (first_name,last_name,email,password) VALUES(%(first_name)s,%(last_name)s,%(email)s,%(password)s)"

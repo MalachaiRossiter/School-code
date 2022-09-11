@@ -10,8 +10,14 @@ def login():
 #page actions
 @app.route('/register', methods=['POST'])
 def register():
+    valid_user = User.create_user(request.form)
 
-    return redirect('/recipes/home')
+    if not valid_user:
+        return redirect("/")
+    
+    session["user_id"] = valid_user.id
+    
+    return redirect("/recipes/home")
 
 @app.route('/sign-in', methods=['POST'])
 def sign_in():

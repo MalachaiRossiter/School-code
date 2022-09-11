@@ -19,9 +19,33 @@ class User:
         self.created_at = user['created_at']
         self.updated_at = user['updated_at']
 
+    #Start here to create new User. --- Step 1
+    @classmethod
+    def create_user(cls, user):
+        if not cls.validate_user(user):
+            return False
 
+        hash = bcrypt.generate_password_hash(user['password'])
+        user['password'] = hash
 
-    #Checks if the email is in the database already. ---Step 2 in Authenticating the New User, Go back to finish step 1
+        query = "INSERT into users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
+        new_user = connectToMySQL(DB).query_db(query,user)
+        user_id = cls.get_id(new_user)
+
+        return user_id
+
+    @classmethod
+    def get_id(cls, user_id):
+
+        data = {'id': user_id}
+        query = "SELECT * FROM users WHERE id = %(id)s"
+        result = connectToMySQL(DB).query_db(query, data)
+
+        if len(result) < 1:
+            return False
+        return cls(result [0])
+
+    #Checks if the email is in the database already. ---Step 3 in Authenticating the New User, Go back to finish step 2
     @classmethod
     def get_email(cls,email):
         data = {"email": email}
@@ -33,7 +57,7 @@ class User:
         return cls(result[0])
 
 
-    #checking if the username has been filled out propperly ---Step 1 in Authentication
+    #checking if the username has been filled out propperly ---Step 2 in Authentication
     @classmethod
     def validate_user(user):
         is_valid = True

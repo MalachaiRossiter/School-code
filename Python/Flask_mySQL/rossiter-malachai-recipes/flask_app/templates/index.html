@@ -8,6 +8,16 @@
 </head>
 <body>
     <h1>Recipe Share</h1>
+    {% with messages = get_flashed_messages(category_filter=['registration']) %}
+
+    {% if messages %}
+
+    {%for messages in messages %}
+
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
     <form action="/register" method="post">
         <h2>Register</h2>
         <div>
@@ -20,7 +30,7 @@
         </div>
         <div>
             <label for="email">Email: </label>
-            <input type="text" name="first_name" id="email" placeholder="email">
+            <input type="text" name="email" id="email" placeholder="email">
         </div>
         <div>
             <label for="password">Password: </label>
@@ -31,6 +41,27 @@
             <input type="text" name="confirm_password" id="confirm_password" placeholder="confirm password">
         </div>
         <input type="submit" value="register">
+    </form>
+
+    <!-- loggin -->
+    {% with messages = get_flashed_messages(category_filter=['login']) %}
+    {% if messages %}
+    {%for messages in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form action="/signin" method="post">
+        <h2>Login</h2>
+        <div>
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="text" name="password" id="password">
+        </div>
+        <input type="submit" value="sign-in">
     </form>
 </body>
 </html>

@@ -8,16 +8,18 @@
 </head>
 <body>
     <h1>Recipe Share</h1>
-    {% with messages = get_flashed_messages(category_filter=['registration']) %}
+    <div>
+        {% with messages = get_flashed_messages(category_filter=['registration']) %}
 
-    {% if messages %}
-
-    {%for messages in messages %}
-
-    <p>{{message}}</p>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+        {% if messages %}
+    
+        {%for messages in messages %}
+    
+        <p>{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
     <form action="/register" method="post">
         <h2>Register</h2>
         <div>
@@ -34,23 +36,25 @@
         </div>
         <div>
             <label for="password">Password: </label>
-            <input type="text" name="password" id="password" placeholder="password">
+            <input type="password" name="password" id="password" placeholder="password">
         </div>
         <div>
             <label for="confirm_password">Confirm Password: </label>
-            <input type="text" name="confirm_password" id="confirm_password" placeholder="confirm password">
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="confirm password">
         </div>
         <input type="submit" value="register">
     </form>
 
     <!-- loggin -->
-    {% with messages = get_flashed_messages(category_filter=['login']) %}
-    {% if messages %}
-    {%for messages in messages %}
-    <p>{{message}}</p>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+    <div>
+        {% with messages = get_flashed_messages(category_filter=['login']) %}
+        {% if messages %}
+        {%for messages in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
     <form action="/signin" method="post">
         <h2>Login</h2>
         <div>
@@ -59,7 +63,7 @@
         </div>
         <div>
             <label for="password">Password: </label>
-            <input type="text" name="password" id="password">
+            <input type="password" name="password" id="password">
         </div>
         <input type="submit" value="sign-in">
     </form>

@@ -23,10 +23,10 @@ def sign_in():
     print('request for', request.form)
     valid_user = User.authenticate_user(request.form)
     if not valid_user:
-        return redirect('/')
+        return
 
     session['user_id'] = valid_user.id
-    return redirect('/recipies/home')
+    return redirect('/recipes/home')
 
 @app.route('/logout')
 def logout():

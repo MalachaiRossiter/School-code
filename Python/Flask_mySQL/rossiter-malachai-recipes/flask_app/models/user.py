@@ -96,8 +96,6 @@ class User:
             flash('this email doesnt exist chump', 'login')
             return existing_user
 
-        print('password in table: ', existing_user.password)
-        print('password: ', bcrypt.generate_password_hash(user['password']))
         if not bcrypt.check_password_hash(existing_user.password, user['password']):
             return False
         

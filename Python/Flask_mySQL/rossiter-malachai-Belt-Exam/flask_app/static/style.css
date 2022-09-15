@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.row{
+    display: flex;
+    padding: 60px;
+}
+
+.col{
+    flex: 50%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+label{
+    display: block;
+    padding-top: 20px;
+}
+
+input{
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(201, 201, 201);
+}
+
+.submit-btn{
+    margin-top: 20px;
+    padding: 5px 10px;
+}
+
+.error{
+    display: inline-block;
+    color: white;
+    background-color: rgb(252, 135, 135);
+    border-radius: 5px;
+}
+
+.error p{
+    padding: 5px;
+}

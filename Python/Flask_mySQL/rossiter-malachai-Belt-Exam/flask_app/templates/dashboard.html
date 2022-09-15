@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Rock On {{user.first_name}} {{user.last_name}}!!!!</h1>
+        <a href="/mybands" class="navlink">My Bands</a>
+        <a href="/new/sighting" class="navlink">New Band</a>
+        <a href="/logout" class="navlink logout">Logout</a>
+    </div>
+    <h2>All Bands</h2>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Band Name</th>
+                    <th>Founding Member</th>
+                    <th>Genre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for band in bands %}
+                <tr>
+                    <td>{{band.name}}</td>
+                    <td>{{band.first_name}}</td>
+                    <td>{{band.genre}}</td>
+                    <td>
+                        {% if band.users_id == user.id %}
+                        <a href="/edit/{{band.id}}">Edit</a>
+                        <a href="/delete/{{band.id}}">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

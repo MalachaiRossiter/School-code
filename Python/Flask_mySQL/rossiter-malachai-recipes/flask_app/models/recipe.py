@@ -1,3 +1,4 @@
+from ast import Delete
 from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, session
@@ -43,10 +44,44 @@ class Recipe:
 
     @classmethod
     def get_all(cls):
-        query = "SELECT * FROM recipes;"
+        query = "SELECT * FROM recipes JOIN users ON users.id = recipes.users_id;"
         result = connectToMySQL(DB).query_db(query)
         print('result of query', result)
         return result
+
+    @classmethod
+    def get_recipe(cls,recipe_id):
+        data = {'id': recipe_id}
+        query = "SELECT * FROM recipes WHERE id = %(id)s"
+        recipe = connectToMySQL(DB).query_db(query,data)
+        print("The Database has this for the Recipe: ", recipe)
+        return cls(recipe[0])
+
+    @classmethod
+    def update_recipe(cls, recipe,recipe_id):
+
+        if not cls.validate_recipe(recipe):
+            return False
+        data = {
+            'name': recipe['name'],
+            'description': recipe['description'],
+            'instruction': recipe['instruction'],
+            'time30': recipe['time30'],
+            'date': recipe['date'],
+            'id': recipe_id
+        }
+        query = "UPDATE recipes_schema.recipes SET name = %(name)s, description = %(description)s, instruction = %(instruction)s, time30 = %(time30)s, date = %(date)s WHERE id = %(recipe_id)s"
+        result = connectToMySQL(DB).query_db(query)
+        print("result of the update", result)
+        return result
+
+
+
+    @classmethod
+    def delete_recipe(cls,recipe_id):
+        data = {'id': recipe_id}
+        query = "DELETE FROM recipes WHERE id = %(id)s"
+        connectToMySQL(DB).query_db(query,data)
 
     @classmethod
     def validate_recipe(cls, recipe):
@@ -56,6 +91,10 @@ class Recipe:
             is_valid=False
             return is_valid
         if len(recipe['description']) < 1:
+            flash('there isnt enough information')
+            is_valid=False
+            return is_valid
+        if len(recipe['instruction']) < 1:
             flash('there isnt enough information')
             is_valid=False
             return is_valid

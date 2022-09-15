@@ -16,9 +16,9 @@ def register():
         return redirect('/')
     session['user_id'] = valid_user.id
     
-    return redirect("/recipes/home")
+    return redirect("/dashboard")
 
-@app.route('/signin', methods=['POST'])
+@app.route('/sign-in', methods=['POST'])
 def sign_in():
     print('request for', request.form)
     valid_user = User.authenticate_user(request.form)
@@ -26,7 +26,7 @@ def sign_in():
         return redirect('/')
 
     session['user_id'] = valid_user.id
-    return redirect('/recipes/home')
+    return redirect('/dashboard')
 
 @app.route('/logout')
 def logout():

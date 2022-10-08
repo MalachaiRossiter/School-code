@@ -6,6 +6,11 @@ public class BarristaTest {
 
         Order order1 = new Order("Tim");
 
-        
+        order1.addItem(item3);
+        order1.addItem(item2);
+        order1.addItem(item1);
+
+        System.out.println("The name of the order is: " + order1.getName());
+        order1.getItems();
     }
 }

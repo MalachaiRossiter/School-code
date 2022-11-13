@@ -13,5 +13,6 @@ public class Gorilla{
 
     public void eatBananas(){
         energy += 10;
+        name = "beans";
     }
 }

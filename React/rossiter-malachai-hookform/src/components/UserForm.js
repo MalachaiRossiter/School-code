@@ -12,6 +12,7 @@ const UserForm = (props) => {
         e.preventDefault();
 
         const newUser = {firstname, lastname, email, password, confirmpassword};
+        console.log("Welcome ", newUser);
         setFirstname("");
         setLastname("");
         setEmail("");

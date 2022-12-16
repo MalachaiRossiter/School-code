@@ -5,11 +5,11 @@ const ColorForm = (props) => {
     const { boxColorArray, setBoxColorArray } = props;
 
     const [color, setColor] = useState("");
-    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setBoxColorArray( [...boxColorArray, color] );
+        setColor("");
         console.log(boxColorArray);
     };
 

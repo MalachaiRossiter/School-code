@@ -8,7 +8,7 @@ const People = (props) => {
     const [people, setPeople] = useState([]);
     console.log(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     useEffect(() => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=1008/`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/3/`)
         .then((response) =>{setPeople(response.data.results);
         })
         .catch((err) => console.log(err));

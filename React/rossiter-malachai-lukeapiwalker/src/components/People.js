@@ -8,7 +8,7 @@ const People = (props) => {
     const [people, setPeople] = useState([]);
     console.log(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     useEffect(() => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=1008/`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/1/`)
         .then((response) =>{setPeople(response.data.results);
         })
         .catch((err) => console.log(err));
@@ -17,12 +17,12 @@ const People = (props) => {
 
     return (
         <div>
-            {people.map((pokemon, index) => (
+            {/* {people.map((pokemon, index) => (
                 <div key={index}>
                     <p>{pokemon.name}</p>
                     <p>{pokemon.url}</p>
                 </div>
-            ))}
+            ))} */}
         </div>
     );
 }

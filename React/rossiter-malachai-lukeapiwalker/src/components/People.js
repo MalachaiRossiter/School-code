@@ -17,12 +17,12 @@ const People = (props) => {
 
     return (
         <div>
-            {/* {people.map((pokemon, index) => (
+            {people.map((pokemon, index) => (
                 <div key={index}>
                     <p>{pokemon.name}</p>
                     <p>{pokemon.url}</p>
                 </div>
-            ))} */}
+            ))}
         </div>
     );
 }
